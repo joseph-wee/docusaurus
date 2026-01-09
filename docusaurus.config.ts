@@ -41,6 +41,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
+          showLastUpdateTime: true, // 날짜 표시
+
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
