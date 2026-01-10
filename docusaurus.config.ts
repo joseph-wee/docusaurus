@@ -5,8 +5,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "Josephlog",
+  tagline: "개발관련 기록들을 남기는 공간입니다.",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -41,6 +41,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
+          routeBasePath: "/",
           showLastUpdateTime: true, // 날짜 표시
 
           // Please change this to your repo.
@@ -50,6 +51,7 @@ const config: Config = {
         },
         blog: {
           showReadingTime: true,
+          routeBasePath: "blog",
           feedOptions: {
             type: ["rss", "atom"],
             xslt: true,
@@ -77,9 +79,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "My Site",
+      title: "Josephlog",
       logo: {
-        alt: "My Site Logo",
+        alt: "Josephlog Logo",
         src: "img/logo.svg",
       },
       items: [
@@ -87,61 +89,62 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Tutorial",
+          label: "Docs",
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
-          href: "https://github.com/facebook/docusaurus",
-          label: "GitHub",
+          href: "https://github.com/joseph-wee/docusaurus",
           position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository link",
         },
       ],
     },
-    footer: {
-      style: "dark",
-      links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "Tutorial",
-              to: "/docs/intro",
-            },
-          ],
-        },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "X",
-              href: "https://x.com/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-    },
+    // footer: {
+    //   style: "dark",
+    //   links: [
+    //     {
+    //       title: "Docs",
+    //       items: [
+    //         {
+    //           label: "Tutorial",
+    //           to: "/docs/intro",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: "Community",
+    //       items: [
+    //         {
+    //           label: "Stack Overflow",
+    //           href: "https://stackoverflow.com/questions/tagged/docusaurus",
+    //         },
+    //         {
+    //           label: "Discord",
+    //           href: "https://discordapp.com/invite/docusaurus",
+    //         },
+    //         {
+    //           label: "X",
+    //           href: "https://x.com/docusaurus",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: "More",
+    //       items: [
+    //         {
+    //           label: "Blog",
+    //           to: "/blog",
+    //         },
+    //         {
+    //           label: "GitHub",
+    //           href: "https://github.com/facebook/docusaurus",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    //   copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+    // },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
