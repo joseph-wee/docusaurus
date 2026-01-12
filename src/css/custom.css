@@ -1,8 +1,14 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* 커스텀 변경 사항 */
+
+/*
+- 폰트 pretendard 적용
+- github 로고 적용
+- 메인 컬러 보라색 팔레트 적용
+- 사이드바 폰트 14px, 메뉴 active weight 600, 메뉴 버튼 크기 조절
+- 네브바 폰트 14px, active weight 600
+- 마크다운 폰트 헤더 크기
+- 마크다운 코드 폰트 크기
+*/
 
 /******************************************************************/
 
@@ -15,9 +21,6 @@
     --ifm-font-family-base:
         "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         sans-serif;
-
-    /* 코드 블럭 폰트 */
-    /*--ifm-font-family-monospace: 'Fira Code', monospace;*/
 }
 
 /******************************************************************/
@@ -43,7 +46,6 @@
 /* 마우스 호버 시 효과 */
 .header-github-link:hover:before {
     background-color: var(--ifm-navbar-link-hover-color);
-    opacity: 0.8;
 }
 
 /* 간격 조정 */
@@ -55,59 +57,89 @@
 
 /******************************************************************/
 
-/* 보라색 적용 */
+/* 메인 컬러 보라색 팔레트 적용 */
 
 :root {
-    /* 라이트 모드 메인 컬러: #7852ee */
     --ifm-color-primary: #7852ee;
-    --ifm-color-primary-dark: #663de9;
-    --ifm-color-primary-darker: #5e35e7;
-    --ifm-color-primary-darkest: #4d23d4;
-    --ifm-color-primary-light: #8a67f1;
-    --ifm-color-primary-lighter: #9372f2;
-    --ifm-color-primary-lightest: #ae95f6;
+    --ifm-color-primary-dark: #6135eb;
+    --ifm-color-primary-darker: #5626ea;
+    --ifm-color-primary-darkest: #4114cc;
+    --ifm-color-primary-light: #8f6ff1;
+    --ifm-color-primary-lighter: #9a7ef2;
+    --ifm-color-primary-lightest: #bca9f7;
     --ifm-code-font-size: 95%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
-    /* 다크 모드 메인 컬러: #a68af9 */
     --ifm-color-primary: #a68af9;
-    --ifm-color-primary-dark: #8b64f7;
-    --ifm-color-primary-darker: #7e51f6;
-    --ifm-color-primary-darkest: #5618f3;
-    --ifm-color-primary-light: #c1b0fb;
-    --ifm-color-primary-lighter: #cebebc; /* 가독성을 위해 명도 조정 */
-    --ifm-color-primary-lightest: #f3f0fe;
-    --ifm-color-primary-lightest: #4fddbf;
+    --ifm-color-primary-dark: #8a65f7;
+    --ifm-color-primary-darker: #7c53f6;
+    --ifm-color-primary-darkest: #521cf3;
+    --ifm-color-primary-light: #c2affb;
+    --ifm-color-primary-lighter: #d0c1fc;
+    --ifm-color-primary-lightest: #faf8ff;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 /******************************************************************/
 
-/* 기존 색 */
+/* 사이드바 폰트 14px, 메뉴 active weight 600, 메뉴 버튼 크기 조절 */
 
-/* You can override the default Infima variables here. */
-/*:root {
-    --ifm-color-primary: #2e8555;
-    --ifm-color-primary-dark: #29784c;
-    --ifm-color-primary-darker: #277148;
-    --ifm-color-primary-darkest: #205d3b;
-    --ifm-color-primary-light: #33925d;
-    --ifm-color-primary-lighter: #359962;
-    --ifm-color-primary-lightest: #3cad6e;
-    --ifm-code-font-size: 95%;
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}*/
+.menu__list {
+    font-size: 14px;
+}
+.menu__link--active {
+    font-weight: 600;
+}
+.menu__caret:before {
+    background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
+}
+.menu__link--sublist-caret:after {
+    background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
+}
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-/*[data-theme="dark"] {
-    --ifm-color-primary: #25c2a0;
-    --ifm-color-primary-dark: #21af90;
-    --ifm-color-primary-darker: #1fa588;
-    --ifm-color-primary-darkest: #1a8870;
-    --ifm-color-primary-light: #29d5b0;
-    --ifm-color-primary-lighter: #32d8b4;
-    --ifm-color-primary-lightest: #4fddbf;
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}*/
+/******************************************************************/
+
+/* 네브바 폰트 14px, active weight 600 */
+
+.navbar__link {
+    font-size: 14px;
+}
+.navbar__link--active {
+    font-weight: 600;
+}
+
+/******************************************************************/
+
+/* 마크다운 폰트 헤더 크기 */
+
+/* 카테고리 메뉴의 h1 */
+.title_kItE {
+    --ifm-h1-font-size: 2.5rem;
+}
+.markdown h1:first-child {
+    --ifm-h1-font-size: 2.5rem;
+}
+.markdown > h2 {
+    --ifm-h2-font-size: 1.75rem;
+}
+.markdown > h3 {
+    --ifm-h3-font-size: 1.5rem;
+}
+.markdown > h4 {
+    --ifm-h3-font-size: 1.25rem;
+}
+.markdown > h5 {
+    --ifm-h3-font-size: 1rem;
+}
+
+/* 마크다운 코드 폰트 크기 */
+
+.codeBlockContainer_Ckt0 {
+    font-size: 14px;
+}
+
+/* css 주석 정리*/
+/* 문서 정리*/
+/* 깃 커밋*/
