@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://josephlog.info",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -23,7 +23,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  projectName: "Josephlog", // Usually your repo name.
 
   onBrokenLinks: "throw",
 
@@ -73,8 +73,26 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    metadata: [
+      { name: "keywords", content: "blog, dev, josephlog, react" }, // 검색 키워드
+      { name: "description", content: "개발 관련 기록을 남기는 공간입니다." }, // 사이트 설명
+      { property: "og:title", content: "Josephlog" }, // SNS 공유 시 제목
+      {
+        property: "og:image",
+        content: "https://josephlog.info/img/og-image.jpg",
+      }, // SNS 공유 시 이미지
+      { name: "twitter:card", content: "summary_large_image" }, // 트위터 카드 타입
+      { property: "og:type", content: "article" }, // 웹 사이트 타입
+      { property: "og:logo", content: `https://josephlog.info/img/logo.png` }, // 웹 사이트 로고
+    ],
+
+    headTags: [
+      {
+        tagName: "link",
+        attributes: { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      },
+    ],
+    image: "https://josephlog.info/img/og-image.jpg", // 대표 이미지
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -100,6 +118,7 @@ const config: Config = {
         },
       ],
     },
+    // 나중에 푸터 만들고 홈페이지 꾸밀꺼면 사용하기
     // footer: {
     //   style: "dark",
     //   links: [
