@@ -1,0 +1,7 @@
+{
+  "label": "정적 페이지 배포",
+  "position": 1,
+  "link": {
+    "type": "generated-index"
+  }
+}
