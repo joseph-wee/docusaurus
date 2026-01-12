@@ -35,6 +35,8 @@ const config: Config = {
     locales: ["en"],
   },
 
+  trailingSlash: false, // 사이트 url 뒤에 / 추가하지 않도록 함.
+
   presets: [
     [
       "classic",
@@ -84,6 +86,13 @@ const config: Config = {
       { name: "twitter:card", content: "summary_large_image" }, // 트위터 카드 타입
       { property: "og:type", content: "article" }, // 웹 사이트 타입
       { property: "og:logo", content: `https://josephlog.info/img/logo.png` }, // 웹 사이트 로고
+
+      /* Google Search Console */
+      {
+        name: "google-site-verification",
+        content:
+          '<meta name="google-site-verification" content="kbg0ThXK3u-xfE1QDlviHCSJhw1VOKEn-qHLPU9ukuA" />',
+      },
     ],
 
     headTags: [
@@ -93,6 +102,7 @@ const config: Config = {
       },
     ],
     image: "https://josephlog.info/img/og-image.jpg", // 대표 이미지
+
     colorMode: {
       respectPrefersColorScheme: true,
     },
