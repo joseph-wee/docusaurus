@@ -90,8 +90,7 @@ const config: Config = {
       /* Google Search Console */
       {
         name: "google-site-verification",
-        content:
-          '<meta name="google-site-verification" content="kbg0ThXK3u-xfE1QDlviHCSJhw1VOKEn-qHLPU9ukuA" />',
+        content: "kbg0ThXK3u-xfE1QDlviHCSJhw1VOKEn-qHLPU9ukuA",
       },
     ],
 
