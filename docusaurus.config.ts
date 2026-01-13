@@ -74,6 +74,13 @@ const config: Config = {
     ],
   ],
 
+  // mermaid 테마 등록
+  themes: ["@docusaurus/theme-mermaid"],
+  // mermaid 기능 활성화
+  markdown: {
+    mermaid: true,
+  },
+
   themeConfig: {
     metadata: [
       { name: "keywords", content: "blog, dev, josephlog, react" }, // 검색 키워드
