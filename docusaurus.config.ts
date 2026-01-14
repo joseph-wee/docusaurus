@@ -1,6 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-directives";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -45,7 +46,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           routeBasePath: "/",
           showLastUpdateTime: true, // 날짜 표시
-
+          beforeDefaultRemarkPlugins: [remarkGithubAdmonitionsToDirectives], // github admonition -> docusaurus admonition 변환 플러그인
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -58,6 +59,7 @@ const config: Config = {
             type: ["rss", "atom"],
             xslt: true,
           },
+          beforeDefaultRemarkPlugins: [remarkGithubAdmonitionsToDirectives],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -80,6 +82,21 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
+  // Google Fonts 미리 연결
+  headTags: [
+    {
+      tagName: "link",
+      attributes: { rel: "preconnect", href: "https://fonts.googleapis.com" },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossorigin: "anonymous",
+      },
+    },
+  ],
 
   themeConfig: {
     metadata: [
@@ -98,13 +115,6 @@ const config: Config = {
       {
         name: "google-site-verification",
         content: "kbg0ThXK3u-xfE1QDlviHCSJhw1VOKEn-qHLPU9ukuA",
-      },
-    ],
-
-    headTags: [
-      {
-        tagName: "link",
-        attributes: { rel: "preconnect", href: "https://fonts.googleapis.com" },
       },
     ],
     image: "https://josephlog.info/img/og-image.jpg", // 대표 이미지
